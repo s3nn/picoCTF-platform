@@ -40,11 +40,9 @@ Copyright: Carnegie Mellon University
 
 License: MIT
 
-Maintainers: Roy Ragsdale
-
 Credits: David Brumley, Tim Becker, Chris Ganas, Peter Chapman, Jonathan Burket
 
-Email: rragsdale@cmu.edu
+Email: opensource@picoctf.com
 
 Additional Credits
 ------------
