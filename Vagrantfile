@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "web", primary: true do |web|
-    web.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box"
+    web.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
     web.vm.box = "ubuntu/vivid64"
 
     # web.vm.hostname = "web"
