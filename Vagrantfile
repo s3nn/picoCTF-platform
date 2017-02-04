@@ -4,8 +4,8 @@
 Vagrant.configure("2") do |config|
 
   config.vm.define "shell", primary: true do |shell|
-    shell.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box"
-    shell.vm.box = "ubuntu/vivid64"
+    shell.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+    shell.vm.box = "ubuntu/trusty64"
 
     # Bug fixed in 1.7.4
     # shell.vm.hostname = "shell"
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "web", primary: true do |web|
     web.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
-    web.vm.box = "ubuntu/vivid64"
+    web.vm.box = "ubuntu/trusty64"
 
     # web.vm.hostname = "web"
     web.vm.provision :shell, inline: "hostnamectl set-hostname web"
