@@ -3,14 +3,16 @@
 ROOT="/vagrant/picoCTF-web"
 
 # Updates
-apt-get -y update
-apt-get -y upgrade
+export DEBIAN_FRONTEND=noninteractive
+apt-get -y update && apt-get -o Dpkg::Options::="--force-confold" dist-upgrade -q -y --force-yes
 
 # CTF-Platform Dependencies
-apt-get -y install python3-pip nginx mongodb gunicorn git libzmq-dev nodejs-legacy npm
+apt-get -y install python3-pip nginx mongodb gunicorn git libzmq-dev nodejs-legacy npm libssl-dev libffi-dev
 apt-get -y install ruby-dev dos2unix tmux jekyll phantomjs monit firefox xvfb
 
 npm install -g coffee-script react-tools jsxhint coffee-react
+
+pip3 install --upgrade pip 
 
 cd $ROOT
 ./install.sh
