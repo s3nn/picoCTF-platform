@@ -100,7 +100,7 @@ class Challenge(metaclass=ABCMeta):
         """
 
         token = str(random.randint(1, 1e12))
-        hash_token = md5(token.encode("utf-8")).hexdigest()
+        hash_token = "flag{" + md5(token.encode("utf-8")).hexdigest() + "}"
 
         return hash_token
 

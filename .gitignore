@@ -1,2 +1,3 @@
 .vagrant
 picoCTF-problems/userenc
+*.pyc
