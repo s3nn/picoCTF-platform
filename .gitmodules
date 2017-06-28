@@ -1,9 +1,0 @@
-[submodule "picoCTF-web"]
-	path = picoCTF-web
-	url = https://github.com/s3nn/picoCTF-web.git
-[submodule "picoCTF-shell-manager"]
-	path = picoCTF-shell-manager
-	url = https://github.com/s3nn/picoCTF-shell-manager.git
-[submodule "picoCTF-problems"]
-	path = picoCTF-problems
-	url = https://github.com/s3nn/picoCTF-problems.git
