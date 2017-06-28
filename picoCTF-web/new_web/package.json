@@ -1,0 +1,51 @@
+{
+  "name": "picoctf-web-js",
+  "version": "1.0.0",
+  "description": "PicoCTF Web resources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christopher Ganas",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "classnames": "^2.2.1",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cjsx": "^3.0.0",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.1",
+    "history": "^1.13.1",
+    "jquery": "^2.1.4",
+    "js-cookie": "^2.0.4",
+    "noty": "^2.3.7",
+    "react": "^0.14.3",
+    "react-addons-linked-state-mixin": "^0.14.3",
+    "react-addons-update": "^0.14.3",
+    "react-bootstrap": "^0.28.1",
+    "react-dom": "^0.14.3",
+    "react-prop-types": "^0.3.0",
+    "react-router": "^1.0.2",
+    "react-typeahead": "^1.1.5",
+    "reactify": "^1.1.1",
+    "underscore": "^1.8.3",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "history": "^1.17.0",
+    "jquery": "^2.2.0",
+    "js-cookie": "^2.1.0",
+    "noty": "^2.3.8",
+    "react": "^0.14.6",
+    "react-addons-linked-state-mixin": "^0.14.6",
+    "react-addons-update": "^0.14.6",
+    "react-bootstrap": "^0.28.2",
+    "react-dom": "^0.14.6",
+    "react-router": "^1.0.3",
+    "watchify": "^3.7.0"
+  }
+}
