@@ -207,6 +207,10 @@ def load_problems_from_server(sid):
         The number of problems loaded
     """
 
+    # Added by styx00
+    db = api.common.get_conn()
+    db.problems.drop()
+    
     server = get_server(sid)
     shell = get_connection(server['host'], server['port'], server['username'], server['password'])
 

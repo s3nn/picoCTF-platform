@@ -294,4 +294,4 @@ class PHPApp(Service):
         """
 
         web_root = join(self.directory, self.php_root)
-        self.start_cmd = "uwsgi --protocol=http --plugin php -p {1} --php-allowed-docroot {0} --force-cwd {0} --http-socket-modifier1 14 --php-index index.html --php-index index.php --check-static {0} --static-skip-ext php --logto /dev/null".format(web_root, self.num_workers)
+        self.start_cmd = "uwsgi --protocol=http --plugin php -p {1} --php-allowed-docroot {0} --force-cwd {0} --http-socket-modifier1 14 --php-index index.html --php-index index.php --static-index index.html --check-static {0} --static-skip-ext php --logto /dev/null".format(web_root, self.num_workers)
