@@ -202,15 +202,9 @@ WantedBy=shell_manager.target
     problem_service_info = problem.service()
     service_content = service_template.format(problem.name, problem.user, problem.directory,
                               problem_service_info['Type'], problem_service_info['ExecStart'],
-                              "null" if is_web or not is_service else "socket",
-                              "null" if is_web or not is_service else "socket",
-                              "true" if is_web or not is_service else "false",
-                              "true" if is_web or not is_service else "false")
+                                "null", "null", "true", "true")
 
-    if is_web or not is_service:
-        service_file_path = join(path, "{}.service".format(problem.user))
-    else:
-        service_file_path = join(path, "{}@.service".format(problem.user))
+    service_file_path = join(path, "{}.service".format(problem.user))
 
     socket_file_path = join(path, "{}.socket".format(problem.user))
 
@@ -218,8 +212,7 @@ WantedBy=shell_manager.target
         f.write(service_content)
 
     if isinstance(problem, Service):
-        socket_content = socket_template.format(problem.name, problem.port,
-                            "false" if is_web else "true")
+        socket_content = socket_template.format(problem.name, problem.port, "false")
 
         with open(socket_file_path, "w") as f:
             f.write(socket_content)
@@ -454,6 +447,7 @@ def install_user_service(service_file, socket_file):
 
     execute(["systemctl", "daemon-reload"], timeout=60)
     execute(["systemctl", "enable", service_name], timeout=60)
+    execute(["systemctl", "restart", service_name], timeout=60)
 
     if socket_file == None:
       execute(["systemctl", "restart", service_name], timeout=60)

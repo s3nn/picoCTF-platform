@@ -227,7 +227,7 @@ class Remote(Service):
         else:
             self.service_files = [ExecutableFile(self.program_name)]
 
-        self.start_cmd = "socat tcp-listen:{},fork,reuseaddr EXEC:'{}'".format(self.port, join(self.directory, self.program_name))
+        self.start_cmd = "socat tcp-listen:{},fork,reuseaddr EXEC:'{}',pty".format(self.port, join(self.directory, self.program_name))
 
     def make_no_aslr_wrapper(self, exec_path, output="no_aslr_wrapper"):
         """
