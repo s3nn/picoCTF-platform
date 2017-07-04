@@ -60,8 +60,8 @@ These are the default settings that will be loaded
 into the database if no settings are already loaded.
 """
 default_settings = {
-    "enable_teachers": True,
-    "enable_feedback": True,
+    "enable_teachers": False,
+    "enable_feedback": False,
 
 
     # TIME WINDOW
@@ -72,11 +72,11 @@ default_settings = {
     "email_filter": [],
 
     # TEAMS
-    "max_team_size": 5,
+    "max_team_size": 1,
 
     # ACHIEVEMENTS
     "achievements": {
-        "enable_achievements": True,
+        "enable_achievements": False,
         "processor_base_path": "./achievements",
     },
 

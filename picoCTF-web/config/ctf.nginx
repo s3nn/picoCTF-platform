@@ -4,7 +4,7 @@ server {
         root   /srv/http/ctf;
 
         ssl_protocols TLSv1.2 TLSv1.1 TLSv1;
-
+        sendfile off;
         gzip on;
         gzip_vary on;
         gzip_disable "msie6";
@@ -12,11 +12,6 @@ server {
 
         error_page 404  = /404.html;
         error_page 401  = /401.html;
-
-        location = / {
-            default_type text/html;
-            index  index.html;
-        }
 
         location ~ /api/ {
             proxy_set_header Host $host;
@@ -26,7 +21,38 @@ server {
             proxy_redirect off;
         }
 
-        location ~ ^/(problems|profile|scoreboard|account|shell|reset|faq|news|contact)$ {
+        location = / {
+            error_page 401 =200 @notLoggedIn;
+            auth_request /api/user/authorize/user;
+            default_type text/html;
+            index /profile;
+        }
+
+        location @notLoggedIn {
+            default_type text/html;
+            index index.html;
+        }
+
+        location = /index.html {
+            etag off;
+            add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0' always;
+            expires off;
+            if_modified_since off;
+            add_header Last-Modified "";
+        }
+
+        location = /profile {
+            auth_request /api/user/authorize/user;
+            etag off;
+            add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0' always;
+            expires off;
+            if_modified_since off;
+            add_header Last-Modified "";
+            default_type text/html;
+            alias /srv/http/ctf/profile.html;
+        }
+
+        location ~ ^/(problems|scoreboard|account|shell|reset|faq|news|contact)$ {
             auth_request /api/user/authorize/user;
             default_type text/html;
             alias /srv/http/ctf/$1.html;
@@ -43,5 +69,4 @@ server {
             default_type text/html;
             alias /srv/http/ctf/$1.html;
         }
-
 }

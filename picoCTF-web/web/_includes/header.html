@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top no-margin" role="navigation">
+<nav class="navbar navbar-static-top no-margin" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
                 <a class="navbar-brand dropdown-toggle" href="/">
-                    CTF <br/> Placeholder
+                    <img src="/img/runesec_logo.png" alt="RUNESEC Logo" />
                 </a>
         </div>
 
@@ -21,7 +21,7 @@
 
 <script type="text/template" id="navbar-links-template">
     <div class="collapse navbar-collapse navbar-ex1-collapse row">
-        <div class="col-md-9 pull-right">
+        <div class="col-md-7 pull-right">
             <ul class="nav navbar-nav navbar-right" id="navbar-links">
                 <% if(status.logged_in) { %>
                 <li>
@@ -35,12 +35,12 @@
                     </a>
                 </li>
                 <li>
-                    <a hrefA="#" id="navbar-item-logout"">Logout</a>
+                    <a hrefA="#" id="navbar-item-logout">Logout</a>
                 </li>
                 <% } %>
             </ul>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-7 pull-right">
             <ul class="nav navbar-nav navbar-right" id="navbar-links">
             <% _.each(links, function(link, name) { %>
                 <% if(typeof link == "object") {  %>

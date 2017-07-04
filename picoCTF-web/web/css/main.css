@@ -1,3 +1,34 @@
+a {
+    color: #ba1316 !important;
+    cursor: pointer;
+}
+
+.navbar-header {
+    min-height: 64px;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #ffffff !important;
+}
+
+.navbar-toggle:hover {
+    border-color: #ffffff !important;
+}
+
+#navbar-links a {
+    color: #ffffff !important;
+}
+
+#navbar-links a:hover {
+    color: #ba1316 !important;
+    text-decoration: none !important;
+}
+
+.btn-primary {
+    background-color: #ba1316 !important;
+    border-color: #000000 !important;
+}
+
 .btn-sq {
   width: 80px !important;
   height: 80px !important;
@@ -60,6 +91,7 @@
 
 .navbar {
     /*height: 90px;*/
+    background-color: #000000;
 }
 
 .progress {
@@ -142,7 +174,7 @@
 }
 
 a.navbar-brand {
-    max-width: 250px;
+    max-width: 280px;
 }
 
 .header-logo {
