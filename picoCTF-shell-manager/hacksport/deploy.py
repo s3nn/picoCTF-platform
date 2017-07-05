@@ -185,16 +185,18 @@ IgnoreSIGPIPE={}
 WantedBy=shell_manager.target
 """
 
-    socket_template = """[Unit]
-Description=Socket for {}
-
-[Socket]
-ListenStream={}
-Accept={}
-
-[Install]
-WantedBy=shell_manager.target
-"""
+# Remove systemd sockets and manage stuff using socat for greater flexibility when serving binary files
+#
+#     socket_template = """[Unit]
+# Description=Socket for {}
+#
+# [Socket]
+# ListenStream={}
+# Accept={}
+#
+# [Install]
+# WantedBy=shell_manager.target
+# """
 
     is_service = isinstance(problem, Service)
     is_web = isinstance(problem, FlaskApp) or isinstance(problem, PHPApp)
@@ -206,18 +208,18 @@ WantedBy=shell_manager.target
 
     service_file_path = join(path, "{}.service".format(problem.user))
 
-    socket_file_path = join(path, "{}.socket".format(problem.user))
+    # socket_file_path = join(path, "{}.socket".format(problem.user))
 
     with open(service_file_path, "w") as f:
         f.write(service_content)
 
-    if isinstance(problem, Service):
-        socket_content = socket_template.format(problem.name, problem.port, "false")
+    # if isinstance(problem, Service):
+    #     socket_content = socket_template.format(problem.name, problem.port, "false")
 
-        with open(socket_file_path, "w") as f:
-            f.write(socket_content)
+    #     with open(socket_file_path, "w") as f:
+    #         f.write(socket_content)
 
-        return (service_file_path, socket_file_path)
+    #     return (service_file_path, socket_file_path)
 
     return (service_file_path, None)
 

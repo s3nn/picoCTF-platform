@@ -10,6 +10,7 @@ from hacksport.deploy import give_port
 from shell_manager.util import EXTRA_ROOT
 from shutil import copy2
 
+from random import Random
 import os
 from os.path import join
 
@@ -99,7 +100,7 @@ class Challenge(metaclass=ABCMeta):
             random: seeded random module.
         """
 
-        token = str(random.randint(1, 1e12))
+        token = str(random.randint(1, 1e24))
         hash_token = "flag{" + md5(token.encode("utf-8")).hexdigest() + "}"
 
         return hash_token
@@ -227,7 +228,7 @@ class Remote(Service):
         else:
             self.service_files = [ExecutableFile(self.program_name)]
 
-        self.start_cmd = "socat tcp-listen:{},fork,reuseaddr EXEC:'{}',pty".format(self.port, join(self.directory, self.program_name))
+        self.start_cmd = "socat tcp-listen:{},fork,reuseaddr EXEC:'{}',pty,rawer".format(self.port, join(self.directory, self.program_name))
 
     def make_no_aslr_wrapper(self, exec_path, output="no_aslr_wrapper"):
         """
