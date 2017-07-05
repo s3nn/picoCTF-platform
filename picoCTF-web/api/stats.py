@@ -78,7 +78,7 @@ def get_group_average_score(gid=None, name=None):
     return int(total_score / len(group_scores)) if len(group_scores) > 0 else 0
 
 # Stored by the cache_stats daemon
-@api.cache.memoize()
+#@api.cache.memoize()
 def get_all_team_scores(eligible=None):
     """
     Gets the score for every team in the database.
@@ -211,7 +211,7 @@ def get_problem_submission_stats(pid=None, name=None):
         "invalid": len(api.problem.get_submissions(pid=problem["pid"], correctness=False)),
     }
 
-@api.cache.memoize()
+#@api.cache.memoize()
 def get_score_progression(tid=None, uid=None, category=None):
     """
     Finds the score and time after each correct submission of a team or user.
@@ -264,7 +264,7 @@ def get_top_teams(gid=None, eligible=None):
     return all_teams if len(all_teams) < top_teams else all_teams[:top_teams]
 
 # Stored by the cache_stats daemon
-@api.cache.memoize()
+#@api.cache.memoize()
 def get_problem_solves(name=None, pid=None):
     """
     Returns the number of solves for a particular problem.
@@ -284,7 +284,7 @@ def get_problem_solves(name=None, pid=None):
 
     return db.submissions.find({'pid': problem["pid"], 'correct': True}).count()
 
-@api.cache.memoize()
+#@api.cache.memoize()
 def get_top_teams_score_progressions(gid=None, eligible=True):
     """
     Gets the score_progressions for the top teams

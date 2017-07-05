@@ -644,7 +644,7 @@ def get_all_problems(category=None, show_disabled=False):
 
     return list(db.problems.find(match, {"_id":0}).sort('score', pymongo.ASCENDING))
 
-@api.cache.memoize()
+#@api.cache.memoize()
 def get_solved_problems(tid=None, uid=None, category=None, show_disabled=False):
     """
     Gets the solved problems for a given team or user.
