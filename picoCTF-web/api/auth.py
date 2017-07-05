@@ -80,7 +80,7 @@ def logout():
     """
     Clears the session
     """
-
+    session.pop('uid', None)
     session.clear()
 
 def is_logged_in():
