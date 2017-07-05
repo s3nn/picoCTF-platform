@@ -45,8 +45,8 @@ rm /etc/nginx/sites-enabled/default
 service nginx restart
 
 cp /vagrant/scripts/shellinaboxd.service /lib/systemd/system/
-systemctl enable shellinaboxd.service
-systemctl start shellinaboxd.service
+# systemctl enable shellinaboxd.service
+# systemctl start shellinaboxd.service
 
 # PAM module setup
 cp $ROOT/config/common-auth /etc/pam.d/common-auth
@@ -108,8 +108,11 @@ systemctl enable monit
 systemctl start monit
 monit reload
 
-# Install the example problems.
+# Uncomment to install the example problems.
 EXAMPLE_PROBLEMS_ROOT="/vagrant/picoCTF-problems/Examples"
+
+# Comment out or modify to install your problems (and place problems in this directory)
+EXAMPLE_PROBLEMS_ROOT="/vagrant/picoCTF-problems/userenc"
 
 mkdir -p $USER_HOME/debs $USER_HOME/bundles
 
@@ -121,9 +124,11 @@ do
     apt-get install -fy
 done
 
+# Uncomment this line to install Example problems
+# shell_manager bundle -s $USER_HOME -o $USER_HOME/bundles $EXAMPLE_PROBLEMS_ROOT/Bundles/challenge-sampler.json
 
-shell_manager bundle -s $USER_HOME -o $USER_HOME/bundles $EXAMPLE_PROBLEMS_ROOT/Bundles/challenge-sampler.json
-shell_manager bundle -s $USER_HOME -o $USER_HOME/bundles $EXAMPLE_PROBLEMS_ROOT/Bundles/challenge-sampler-tools.json
+# Comment out this line or modify with the name  of your bundle.json file
+shell_manager bundle -s $USER_HOME -o $USER_HOME/bundles $EXAMPLE_PROBLEMS_ROOT/Bundles/runesec-ctf.json
 
 for f in $USER_HOME/bundles/*
 do
@@ -132,5 +137,8 @@ do
     apt-get install -fy
 done
 
-# Fix dependencies
-shell_manager deploy -b challenge-sampler
+# Uncomment to install Example problems
+# shell_manager deploy -b challenge-sampler
+
+# Modify with name of the installed bundle package generated after the bundled .deb file is installed
+shell_manager deploy -b runesec-ctf
