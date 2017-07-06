@@ -3,18 +3,18 @@ apiOffline =
 
 teacherLoggedIn =
   Problems: "/problems"
-  Shell: "/shell"
+  #Shell: "/shell"
   Scoreboard: "/scoreboard"
-  Classroom: "/classroom"
+  #Classroom: "/classroom"
   News: "/news"
 
 teacherLoggedInNoCompetition =
-  Classroom: "/classroom"
+  #Classroom: "/classroom"
   News: "/news"
 
 userLoggedIn =
   Problems: "/problems"
-  Shell: "/shell"
+  #Shell: "/shell"
   Scoreboard: "/scoreboard"
   News: "/news"
 

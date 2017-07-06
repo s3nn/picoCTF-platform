@@ -190,7 +190,7 @@ def create_user(username, firstname, lastname, email, password_hash, tid,
     #All teachers are admins.
     if admin or db.users.count() == 0:
         admin = True
-        teacher = True
+        teacher = False # Disabled for now.
 
     user = {
         'uid': uid,
@@ -269,7 +269,7 @@ def create_simple_user_request(params):
         lastname: user's first name
         email: user's email
         eligibile: "eligibile" or "ineligibile"
-        affiliation: user's affiliation 
+        affiliation: user's affiliation
         gid: group registration
         rid: registration id
     """

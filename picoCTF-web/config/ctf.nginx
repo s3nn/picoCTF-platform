@@ -52,21 +52,27 @@ server {
             alias /srv/http/ctf/profile.html;
         }
 
-        location ~ ^/(problems|scoreboard|account|shell|reset|faq|news|contact)$ {
+        location ~ ^/(problems|scoreboard|account|reset|faq|news|contact)$ {
             auth_request /api/user/authorize/user;
             default_type text/html;
             alias /srv/http/ctf/$1.html;
         }
 
-        location ~ ^/(classroom)$ {
-            auth_request /api/user/authorize/teacher;
-            default_type text/html;
-            alias /srv/http/ctf/$1.html;
-        }
+        # Disabled this below
+        #location ~ ^/(classroom)$ {
+        #    auth_request /api/user/authorize/teacher;
+        #    default_type text/html;
+        #    alias /srv/http/ctf/$1.html;
+        #}
 
         location ~ ^/(management)$ {
             auth_request /api/user/authorize/admin;
             default_type text/html;
             alias /srv/http/ctf/$1.html;
+        }
+
+        # Temporary disable shell, classroom, and achievements
+        location ~ ^/(classroom|achievements|shell)$ {
+            return 404;
         }
 }
