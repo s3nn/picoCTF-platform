@@ -1,6 +1,14 @@
+body {
+    font-size: 16px !important;
+}
+
 a {
     color: #ba1316 !important;
     cursor: pointer;
+}
+
+h3 {
+    color: #ba1316 !important;
 }
 
 .navbar-header {
