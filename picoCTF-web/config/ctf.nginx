@@ -72,7 +72,7 @@ server {
         }
 
         # Temporary disable shell, classroom, and achievements
-        location ~ ^/(classroom|achievements|shell)$ {
+        location ~ ^/(classroom.html|achievements.html|shell.html)$ {
             return 404;
         }
 }
