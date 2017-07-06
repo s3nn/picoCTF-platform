@@ -1,5 +1,7 @@
 apiOffline =
   News: "/news"
+  About: "/about"
+  Rules: "/rules"
 
 teacherLoggedIn =
   Problems: "/problems"
@@ -7,24 +9,34 @@ teacherLoggedIn =
   Scoreboard: "/scoreboard"
   #Classroom: "/classroom"
   News: "/news"
+  About: "/about"
+  Rules: "/rules"
 
 teacherLoggedInNoCompetition =
   #Classroom: "/classroom"
   News: "/news"
+  About: "/about"
+  Rules: "/rules"
 
 userLoggedIn =
   Problems: "/problems"
   #Shell: "/shell"
   Scoreboard: "/scoreboard"
   News: "/news"
+  About: "/about"
+  Rules: "/rules"
 
 userLoggedInNoCompetition =
   Scoreboard: "/scoreboard"
   News: "/news"
+  About: "/about"
+  Rules: "/rules"
 
 
 userNotLoggedIn =
   News: "/news"
+  About: "/about"
+  Rules: "/rules"
 
 adminLoggedIn =
   Management: "/management"

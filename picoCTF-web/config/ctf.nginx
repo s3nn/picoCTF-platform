@@ -52,8 +52,13 @@ server {
             alias /srv/http/ctf/profile.html;
         }
 
-        location ~ ^/(problems|scoreboard|account|reset|faq|news|contact)$ {
+        location ~ ^/(problems|scoreboard|account|reset|contact)$ {
             auth_request /api/user/authorize/user;
+            default_type text/html;
+            alias /srv/http/ctf/$1.html;
+        }
+
+        location ~ ^/(rules|news|about)$ {
             default_type text/html;
             alias /srv/http/ctf/$1.html;
         }

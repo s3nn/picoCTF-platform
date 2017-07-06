@@ -2,32 +2,44 @@
 var adminLoggedIn, apiOffline, loadNavbar, teacherLoggedIn, teacherLoggedInNoCompetition, userLoggedIn, userLoggedInNoCompetition, userNotLoggedIn;
 
 apiOffline = {
-  News: "/news"
+  News: "/news",
+  About: "/about",
+  Rules: "/rules"
 };
 
 teacherLoggedIn = {
   Problems: "/problems",
   Scoreboard: "/scoreboard",
-  News: "/news"
+  News: "/news",
+  About: "/about",
+  Rules: "/rules"
 };
 
 teacherLoggedInNoCompetition = {
-  News: "/news"
+  News: "/news",
+  About: "/about",
+  Rules: "/rules"
 };
 
 userLoggedIn = {
   Problems: "/problems",
   Scoreboard: "/scoreboard",
-  News: "/news"
+  News: "/news",
+  About: "/about",
+  Rules: "/rules"
 };
 
 userLoggedInNoCompetition = {
   Scoreboard: "/scoreboard",
-  News: "/news"
+  News: "/news",
+  About: "/about",
+  Rules: "/rules"
 };
 
 userNotLoggedIn = {
-  News: "/news"
+  News: "/news",
+  About: "/about",
+  Rules: "/rules"
 };
 
 adminLoggedIn = {
