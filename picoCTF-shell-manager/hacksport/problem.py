@@ -228,7 +228,7 @@ class Remote(Service):
         else:
             self.service_files = [ExecutableFile(self.program_name)]
 
-        # test crnl option !!!
+        # test crnl option !!!!!
         self.start_cmd = "socat tcp-listen:{},fork,reuseaddr,crnl EXEC:'{}',pty,rawer".format(self.port, join(self.directory, self.program_name))
 
     def make_no_aslr_wrapper(self, exec_path, output="no_aslr_wrapper"):
