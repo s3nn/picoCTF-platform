@@ -3,28 +3,9 @@ layout: default
 title: Rules
 ---
 <div class="container">
-    <div class="row">
-        <h3>Please follow these rules to give everyone a fair chance at winning.</h3>
-        <ol>
-            <li>Use common sense. If you feel like what you're doing is disrupting the competition in any way, STOP doing it. Don't wait for us to yell at you.</li>
-            <li>Don't cheat. We're encouraging you to do your own work. While it's acceptable to use resources on the internet such as documentation or forums, it's not acceptable to ask someone other than the 1-5 members of your team to directly help you on the problem. Don't ask questions on public forums involving specific details of the problems. Don't share flags or methods with other teams.</li>
-            <li>Don't disrupt others. Don't attack other teams, and don't attack the contest infrastructure in order to prevent others from solving problems or submitting flags.</li>
-            <li>Be nice. Since this is an educational environment, don't use profanity in your username or team names. Inappropriate names are subject to account deletion or immediate disqualification at the discretion of the organizers. Also, don't spam or harass people in chat.</li>
-        </ol>
-        <p>
-            If you break any of these rules, your team may be converted into an observer team (see below), disqualifying you from winning prizes. Decisions made by competition organizers are final.
-        </p>
-        <h3>Eligibility</h3>
-        <p>
-            An den eisaste pofles den mporeite na lavete meros sorryz =(
-        </p>
-        <h3>Flag Format</h3>
-        <p>
-            The flags that you find will usually follow the format flag{md5-hash here}. This way, you will know you have the flag when you find it. If you believe you've found a flag but the scoring server is not accepting it, please contact the competition organizers.
-        </p>
-        <h3>Scoring</h3>
-        <p>
-            Every problem has an assigned point value, which is usually representative of the difficulty of the problem. Your total score is the sum of the points you obtain from every problem you solve.
-        </p>
-    </div>
+        {% for post in site.categories.rules %}
+        <div class="row">
+            {{ post.content }}
+        </div>
+        {% endfor %}
 </div>

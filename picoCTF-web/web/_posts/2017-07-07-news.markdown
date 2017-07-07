@@ -1,0 +1,8 @@
+---
+title:  "The CTF is now LIVE!"
+date:   2017-05-05 12:00:00
+categories: news
+---
+
+### The CTF is now LIVE!
+Can you hack all the things?
