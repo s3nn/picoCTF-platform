@@ -109,7 +109,7 @@ systemctl start monit
 monit reload
 
 # Uncomment to install the example problems.
-EXAMPLE_PROBLEMS_ROOT="/vagrant/picoCTF-problems/Examples"
+#EXAMPLE_PROBLEMS_ROOT="/vagrant/picoCTF-problems/Examples"
 
 # Comment out or modify to install your problems (and place problems in this directory)
 EXAMPLE_PROBLEMS_ROOT="/vagrant/picoCTF-problems/userenc"

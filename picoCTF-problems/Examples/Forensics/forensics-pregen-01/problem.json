@@ -1,9 +1,0 @@
-{
-    "name": "Forensics Pregen 01",
-    "category": "Forensics",
-    "description": "This is a test for pregenerated forensics challenges {{url_for(\"cat.pdf\")}}",
-    "score": 100,
-    "hints": ["Cats always like to get in front of everything important."],
-    "author": "Carolina Zarate",
-    "organization": "picoCTF"
-}
