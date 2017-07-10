@@ -1,0 +1,9 @@
+{
+    "name": "Forensics Realtime 01",
+    "category": "Forensics",
+    "description": "This is a test for realtime forensics challenges {{url_for(\"data-secret.png\")}}",
+    "score": 100,
+    "hints": ["Try opening the file in a hex editor."],
+    "author": "Carolina Zarate",
+    "organization": "picoCTF"
+}
