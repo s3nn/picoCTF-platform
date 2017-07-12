@@ -106,7 +106,7 @@ default_settings = {
     # Will be emailed any severe internal exceptions!
     # Requires email block to be setup.
     "logging": {
-        "admin_emails": ["ben@example.com", "joe@example.com"],
+        "admin_emails": ["info@ctf.runesec.com"],
         "critical_error_timeout": 600
     }
 }
