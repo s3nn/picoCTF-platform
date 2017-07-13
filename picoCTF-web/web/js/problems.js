@@ -171,3 +171,4 @@ addScoreToTitle = function(selector) {
 $(function() {
   return loadProblems();
 });
+

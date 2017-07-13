@@ -1,3 +1,15 @@
+.panel-default > .panel-heading {
+    background: #111111 !important;
+}
+
+.list-group-item {
+    font-size: 15px !important;
+}
+
+#main-content h4 {
+    color: #ffffff;
+    font-weight: 500;
+}
 
 /* Style the tab */
 div.tab {
@@ -243,8 +255,8 @@ img {
 #main-content h1,
 #main-content h2,
 #main-content h3,
-#main-content h4,
-#main-content h5, #main-content h6 {
+#main-content h5,
+#main-content h6 {
     color: #000000;
     font-weight: 500;
 }
