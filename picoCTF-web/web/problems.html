@@ -11,16 +11,37 @@ startup_functions:
 <link href="/css/star-rating.min.css" rel="stylesheet" type="text/css"/>
 
 <script type="text/template" id="problem-list-template">
-    <div class="problem-list panel-group">
-        <% _.each(problems, function(problem) { %>
-        <%= renderProblem({
-        problem: problem,
-        reviewData: reviewData,
-        renderProblemSubmit: renderProblemSubmit,
-        sanitizeMetricName: sanitizeMetricName
-        }) %>
-        <% }); %>
+    <% var categories = []; %>
+    <% _.each(problems, function(problem) { %>
+    <% categories.push(problem.category); %>
+    <% }); %>
+
+    <% categories = _.uniq(categories); %>
+
+    <div class="tab">
+        <button class="tablinks active" onclick="openCategory(event, 'All')">All</button>
+    <% _.each(categories, function(category) { %>
+        <button class="tablinks" onclick="openCategory(event, '<%- category %>')"><%- category %></button>
+    <% }); %>
     </div>
+
+    <br/>
+    <% _.each(categories, function(category) { %>
+    <div id="<%- category %>" class="tabContent">
+      <div class="problem-list panel-group">
+          <% _.each(problems, function(problem) { %>
+              <% if (problem.category === category) { %>
+                  <%= renderProblem({
+                      problem: problem,
+                      reviewData: reviewData,
+                      renderProblemSubmit: renderProblemSubmit,
+                      sanitizeMetricName: sanitizeMetricName
+                  }) %>
+              <% } %>
+        <% }); %>
+      </div>
+    </div>
+    <% }); %>
 </script>
 
 <script type="text/template" id="problem-template">
@@ -33,7 +54,6 @@ startup_functions:
         alreadyReviewed = true;
         review = reviewData[i].feedback;
       }
-
 
     var thumbs = {
       upClass: alreadyReviewed && review.liked ? "active" : "",
@@ -148,4 +168,36 @@ startup_functions:
 
 <div class="container">
     <div id="problem-list-holder"></div>
+
+    <script type="text/javascript">
+        function openCategory(evt, category) {
+        // Declare all variables
+        var i, tabContent, tablinks;
+
+        // Get all elements with class="tabContent" and hide them
+        tabContent = document.getElementsByClassName("tabContent");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        if (category === "All") {
+            // Get all elements with class="tabContent" and unhide them
+            tabContent = document.getElementsByClassName("tabContent");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "block";
+            }
+        }
+        else {
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(category).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+      }
+    </script>
 </div>
