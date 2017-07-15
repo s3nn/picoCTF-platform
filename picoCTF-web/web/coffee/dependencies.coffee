@@ -10,6 +10,15 @@
     if url == "/api/user/status" and resp.status == 1
       window.userStatus = resp.data
 
+@redirectIfLoggedIn = ->
+  apiCall "GET", "/api/user/status", {}
+  .done (data) ->
+    switch data["status"]
+      when 1
+        if data.data["logged_in"]
+          ga('send', 'event', 'Redirect', 'AlreadyLoggedIn')
+          window.location.href = "/profile"
+
 @redirectIfNotLoggedIn = ->
   apiCall "GET", "/api/user/status", {}
   .done (data) ->

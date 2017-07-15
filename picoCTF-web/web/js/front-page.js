@@ -99,15 +99,13 @@ LoginForm = React.createClass({displayName: "LoginForm",
       }, React.createElement(Input, {
         "type": "select",
         "label": "Status",
-        "placeholder": "Competitor",
+        "placeholder": "Born in 1992 and onwards",
         "valueLink": this.props.eligibility
       }, React.createElement("option", {
         "value": "eligible"
-      }, "Competitor"), React.createElement("option", {
+      }, "Born in 1992 and onwards"), React.createElement("option", {
         "value": "ineligible"
-      }, "Instructor"), React.createElement("option", {
-        "value": "ineligible"
-      }, "Other")))), React.createElement(ButtonInput, {
+      }, "Born before 1992")))), React.createElement(ButtonInput, {
         "type": "submit"
       }, "Register")) : React.createElement("span", null);
       return React.createElement(Panel, null, React.createElement("form", {

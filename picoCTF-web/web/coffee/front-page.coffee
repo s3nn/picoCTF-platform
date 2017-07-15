@@ -72,10 +72,9 @@ LoginForm = React.createClass
               <Input type="text" id="affiliation" valueLink={@props.affiliation} label="Affiliation"/>
             </Col>
             <Col md={6}>
-              <Input type="select" label="Status" placeholder="Competitor" valueLink={@props.eligibility}>
-                <option value="eligible">Competitor</option>
-                <option value="ineligible">Instructor</option>
-                <option value="ineligible">Other</option>
+              <Input type="select" label="Status" placeholder="Born in 1992 and onwards" valueLink={@props.eligibility}>
+                <option value="eligible">Born in 1992 and onwards</option>
+                <option value="ineligible">Born before 1992</option>
               </Input>
             </Col>
           </Row>

@@ -2,7 +2,7 @@
 var adminLoggedIn, apiOffline, loadNavbar, teacherLoggedIn, teacherLoggedInNoCompetition, userLoggedIn, userLoggedInNoCompetition, userNotLoggedIn;
 
 apiOffline = {
-  Login: "/",
+  Login: "/login",
   News: "/news",
   About: "/about",
   Rules: "/rules"
@@ -38,7 +38,7 @@ userLoggedInNoCompetition = {
 };
 
 userNotLoggedIn = {
-  Login: "/",
+  Login: "/login",
   News: "/news",
   About: "/about",
   Rules: "/rules"

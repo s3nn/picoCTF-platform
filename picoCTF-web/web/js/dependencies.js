@@ -20,6 +20,18 @@ this.apiCall = function(type, url, data) {
   });
 };
 
+this.redirectIfLoggedIn = function() {
+  return apiCall("GET", "/api/user/status", {}).done(function(data) {
+    switch (data["status"]) {
+      case 1:
+        if (data.data["logged_in"]) {
+          ga('send', 'event', 'Redirect', 'AlreadyLoggedIn');
+          return window.location.href = "/profile";
+        }
+    }
+  });
+};
+
 this.redirectIfNotLoggedIn = function() {
   return apiCall("GET", "/api/user/status", {}).done(function(data) {
     switch (data["status"]) {

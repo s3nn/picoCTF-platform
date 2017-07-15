@@ -1,5 +1,5 @@
 apiOffline =
-  Login: "/"
+  Login: "/login"
   News: "/news"
   About: "/about"
   Rules: "/rules"
@@ -34,7 +34,7 @@ userLoggedInNoCompetition =
   Rules: "/rules"
 
 userNotLoggedIn =
-  Login: "/"
+  Login: "/login"
   News: "/news"
   About: "/about"
   Rules: "/rules"
